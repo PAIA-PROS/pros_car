@@ -30,7 +30,7 @@ class ArmSerialWriter(Node):
 
         # Set up the serial connection
         serial_port = self.declare_parameter('serial_port', ARM_SERIAL_PORT_DEFAULT).value
-        self._serial = Serial(serial_port, 9600, timeout=0)
+        self._serial = Serial(serial_port, 115200, timeout=0)
 
         # Subscribe to the JointTrajectoryPoint topic
         self._subscriber = self.create_subscription(
